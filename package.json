@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-	"homepage": "http://JohnAyling1979.github.io/facerecognition",
+	"homepage": "https://johnayling1979.github.io/facerecognition/",
     "clarifai": "^2.7.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",

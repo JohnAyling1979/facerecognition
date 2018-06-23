@@ -1,9 +1,9 @@
 {
+  "homepage": "https://johnayling1979.github.io/facerecognition",
   "name": "facerecognition",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-	"homepage": "https://johnayling1979.github.io/facerecognition/",
     "clarifai": "^2.7.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",

@@ -10,18 +10,6 @@ import Rank from './components/Rank/Rank'
 import FaceRecognition from './components/FaceRecognition/FaceRecognition'
 import './App.css';
 
-const options={
-  particles: {
-    number: {
-      value: 150,
-      density: {
-        enable: true,
-        value_area: 800
-      }
-    }
-  }
-}
-
 const app = new Clarifai.App({
  apiKey: 'c4ff12cfd4f94dfbacf32c51116aad21'
 });
@@ -80,7 +68,7 @@ class App extends Component {
     const {imageUrl, box, route} = this.state
     return (
       <div className="App">
-        <Particles params={options} className='particles'/>
+        <Particles className='particles'/>
         <Navigation onRouteChange={this.onRouteChange} state={route}/>
         {
           route === 'signin' 

@@ -66,14 +66,15 @@ class App extends Component {
     this.setState({box:[]})
 
     fetch('http://localhost:3000/imageUrl', {
-              method: 'put',
+              method: 'post',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
-                id: this.state.user.id
+                input: this.state.input
               })
             })
+      .then(response => response.json())
       .then(response =>  {
-        console.log(response.outputs[0].data.regions)
+        console.log(response)
         response.outputs[0].data.regions.forEach(region => {
           const face = region.region_info.bounding_box
           console.log(face)

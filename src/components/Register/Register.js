@@ -41,6 +41,7 @@ class Register extends React.Component {
 			}else
 				alert("Could not register")
 		})
+		.catch(error => console.log(error))
 	}
 
 

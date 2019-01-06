@@ -34,6 +34,7 @@ class Signin extends React.Component {
 				}else
 					alert('Error login in') 
 			})
+			.catch(error => console.log(error))
 	}
 
 	render() {

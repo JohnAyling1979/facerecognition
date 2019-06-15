@@ -7,6 +7,7 @@ import Logo from './components/Logo/Logo'
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm'
 import Rank from './components/Rank/Rank'
 import FaceRecognition from './components/FaceRecognition/FaceRecognition'
+import config from './config'
 import './App.css';
 
 const initialState = {
@@ -36,7 +37,7 @@ class App extends Component {
         name: userIn.name,
         email: userIn.email,
         entries: userIn.entries,
-        joined: userIn.joined        
+        joined: userIn.joined
     }})
   }
 
@@ -44,6 +45,7 @@ class App extends Component {
     const image = document.getElementById('inputImage')
     const width = Number(image.width)
     const height = Number(image.height)
+
     return {
       leftCol: data.left_col * width,
       topRow: data.top_row * height,
@@ -53,7 +55,6 @@ class App extends Component {
   }
 
   setFaceBox = (box) => {
-    console.log(this.state.box)
     this.state.box.push(box)
   }
 
@@ -74,10 +75,9 @@ class App extends Component {
             })
       .then(response => response.json())
       .then(response =>  {
-        console.log(response)
         response.outputs[0].data.regions.forEach(region => {
           const face = region.region_info.bounding_box
-          console.log(face)
+
           this.setFaceBox(this.calculateFaceLocation(face))
           if(response) {
             fetch('http://localhost:3000/image', {
@@ -110,6 +110,7 @@ class App extends Component {
 
   render() {
     const {imageUrl, box, route, user} = this.state
+
     return (
       <div className="App">
         <Particles className='particles'/>
